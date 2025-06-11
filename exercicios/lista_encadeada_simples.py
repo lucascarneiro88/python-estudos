@@ -8,6 +8,7 @@ class ElementoDaListaSimples:
         self.dado = dado
         self.proximo = None
 
+
     # Representação do objeto como string, útil para print e debug
     def __repr__(self):
         return str(self.dado)
