@@ -18,72 +18,71 @@ class ListaEncadeadaSimples:
             self.head = nodo 
             return 0
 
-    def remover(self, chave):
-        atual = self.head
-        anterior = None
-        while atual:
-            if atual.chave == chave:
-                if anterior == None:
-                    self.head = atual.proximo
-                else:
-                    anterior.proximo = atual.proximo
-                return True 
-            anterior = atual
-            atual = atual.proximo
-        return False  
-
     def imprimir(self):
         temp = self.head
         while temp:
-            print(f"{temp.chave.upper()}\t{temp.dado.upper()}")
+            print(f"{temp.chave}\t{temp.dado}")
             temp = temp.proximo
 
 class TabelaHash:
     def __init__(self):
         self.tam = 10
         self.length = 0
-        self.h = [ListaEncadeadaSimples() for i in range(self.tam)]
+        self.h = [ListaEncadeadaSimples() for i in range(0, self.tam)]
 
     def hashFunc(self, k):
         k = list(k)
-        return (ord(k[0].upper()) + ord(k[1].upper())) % self.tam
+        return (ord(k[0]) + ord(k[1])) % self.tam
 
     def inserir(self, chave, dado):
         pos = self.hashFunc(chave)
-        self.h[pos].inserir(chave, dado)
+        add = self.h[pos].inserir(chave, dado)
 
     def remover(self, chave):
         pos = self.hashFunc(chave)
-        return self.h[pos].remover(chave)
+        atual = self.h[pos].head
+        anterior = None
+        while atual:
+            if atual.chave == chave:
+                if anterior:
+                    anterior.proximo = atual.proximo
+                else:
+                    self.h[pos].head = atual.proximo
+                return 0
+            anterior = atual
+            atual = atual.proximo
+        print("Chave não encontrada para remoção.")
+        return -1
+
+
+   
 
     def imprimir(self):
-        for i in range(self.tam):
-            print(f"Índice {i}:")
+        for i in range(0, self.tam):
             self.h[i].imprimir()
 
-# Programa principal
+
+#Programa principal
 Teste = TabelaHash()
 while True:
-    print('1 - Inserir na tabela hash')
-    print('2 - Remover na tabela hash')
-    print('3 - Listar a tabela hash')
-    print('4 - Sair')
+  print('1 - Inserir na tabela hash')
+  print('2 - Remover na tabela hash')
+  print('3 - Listar a tabela hash')
+  print('4 - Sair')
 
-    op = int(input("Escolha uma opção: "))
-    if op == 1:
-        chave = input('Digite a sigla de um estado: ').strip()
-        dado = input('Digite o nome do estado: ').strip()
-        Teste.inserir(chave, dado)
-    elif op == 2:
-        chave = input('Digite a sigla do estado que deseja remover: ').strip()
-        if Teste.remover(chave):
-            print(f"Estado com sigla '{chave}' removido com sucesso.")
-        else:
-            print(f"Estado com sigla '{chave}' não encontrado.")
-    elif op == 3:
-        Teste.imprimir()
-    elif op == 4:
-        print('Encerrando...')
-        break
-    else:
-        print("Selecione outra opção!\n")
+  op = int(input("Escolha uma opção:"))
+  if op == 1:
+    chave = input('Digite a sigla de um estado: ')
+    dado = input('Digite o nome do estado: ')
+    Teste.inserir(chave, dado)
+  elif op == 2:
+    chave = input('Digite o que deseja remover: ')
+    if Teste.remover(chave):
+        print('Valor não localizado para a remoção!')
+  elif op == 3:
+      Teste.imprimir()
+  elif op == 4:
+    print('Encerrando...')
+    break
+  else:
+    print("Selecione outra opção!\n")
