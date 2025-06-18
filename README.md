@@ -42,6 +42,21 @@ Este repositório contém exemplos e implementações básicas de estruturas de 
   Mantém o balanceamento da árvore após inserções, realizando rotações simples e duplas quando necessário.  
   Inclui método de percurso em ordem.
 
+- `dicionario.py`  
+  Exemplo simples de uso de dicionário em Python para mapear frutas com seus preços.  
+  Mostra como adicionar, acessar e listar chaves de um `dict`.
+
+- `tabela_hash.py`  
+  Implementação básica de uma **tabela hash** com hashing simples por soma dos códigos ASCII.  
+  Inclui inserção, remoção e listagem dos dados.
+
+- `tabela_hash_tratamento_colisoes.py`  
+  Tabela hash com **tratamento de colisão por tentativa linear (linear probing)**.  
+  Em caso de colisão, busca a próxima posição disponível.
+
+- `tabela_hash_lista_encadeada.py`  
+  Tabela hash com **encadeamento separado (separate chaining)** utilizando listas encadeadas simples.  
+  Permite múltiplos elementos por posição da tabela.
 
 ## Como usar
 
