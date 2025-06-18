@@ -31,9 +31,11 @@ Este repositório contém exemplos e implementações básicas de estruturas de 
 - `recursao.py`  
   Exemplos de funções recursivas, incluindo cálculo de fatorial e sequência de Fibonacci.
 
-  - `arvore_binaria_busca.py`  
+
+- `arvore_binaria_busca.py`  
   Implementação de uma **Árvore Binária de Busca (BST)**.  
   Inclui inserção de nós e métodos de percurso: em ordem, pré-ordem, pós-ordem e por nível (largura).
+
 
 - `arvore_avl_busca.py`  
   Implementação de uma **Árvore AVL (autobalanceada)**.  
