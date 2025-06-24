@@ -58,6 +58,24 @@ Este repositório contém exemplos e implementações básicas de estruturas de 
   Tabela hash com **encadeamento separado (separate chaining)** utilizando listas encadeadas simples.  
   Permite múltiplos elementos por posição da tabela.
 
+
+- `grafo_lista_adjacencia.py`  
+  Implementação de um **grafo não direcionado** utilizando **lista de adjacência**.  
+  Define classes para vértices e para o grafo, permitindo a adição de vértices, arestas e a visualização das conexões entre os nós.
+
+
+- `grafo_dfs_lista_adjacencia.py`  
+  Implementação de um **grafo não direcionado** com **busca em profundidade (DFS)** usando lista de adjacência.  
+  Cada vértice registra sua ordem de descoberta ao ser visitado.
+
+
+- `grafo_dijkstra_lista_adjacencia.py`  
+  Implementação de um **grafo ponderado** (com pesos nas arestas) usando **lista de adjacência**.  
+  Utiliza o **algoritmo de Dijkstra** para encontrar o menor caminho a partir de um vértice origem até os demais.
+
+
+
+
 ## Como usar
 
 Cada arquivo pode ser executado individualmente com o comando
